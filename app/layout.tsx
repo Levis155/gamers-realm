@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { system } from "@/theme";
+import { Grid, GridItem, Show } from "@chakra-ui/react";
 import "./globals.css";
 import { Providers } from "./providers";
 
@@ -29,7 +29,29 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Providers>{children}</Providers>
+        <Providers>
+          <Grid
+            templateAreas={{
+              base: `"nav" "main"`,
+              lg: `"nav nav" "aside main"`,
+            }}
+          >
+            <GridItem area="nav" bg="coral">
+              Nav
+            </GridItem>
+            <GridItem
+              area="aside"
+              bg="gold"
+              display={{ base: "none", lg: "block" }}
+            >
+              Aside
+            </GridItem>
+
+            <GridItem area="main" bg="dodgerblue">
+              {children}
+            </GridItem>
+          </Grid>
+        </Providers>
       </body>
     </html>
   );
