@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Grid, GridItem, Show } from "@chakra-ui/react";
 import "./globals.css";
 import { Providers } from "./providers";
+import NavBar from "./NavBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,8 +37,8 @@ export default function RootLayout({
               lg: `"nav nav" "aside main"`,
             }}
           >
-            <GridItem area="nav" bg="coral">
-              Nav
+            <GridItem area="nav">
+              <NavBar />
             </GridItem>
             <GridItem
               area="aside"
