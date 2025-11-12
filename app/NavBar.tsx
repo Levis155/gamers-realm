@@ -4,7 +4,6 @@ const NavBar = () => {
   return (
     <HStack>
       <Image src="/logo.webp" boxSize="60px" />
-      <Text>NavBar</Text>
     </HStack>
   );
 };
