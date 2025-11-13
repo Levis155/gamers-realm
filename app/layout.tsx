@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Grid, GridItem } from "@chakra-ui/react";
 import "./globals.css";
-import Providers from "./providers";
+import Providers from "../providers";
 import NavBar from "./NavBar";
 
 const geistSans = Geist({
@@ -40,17 +40,11 @@ export default function RootLayout({
             <GridItem area="nav">
               <NavBar />
             </GridItem>
-            <GridItem
-              area="aside"
-              bg="gold"
-              display={{ base: "none", lg: "block" }}
-            >
+            <GridItem area="aside" display={{ base: "none", lg: "block" }}>
               Aside
             </GridItem>
 
-            <GridItem area="main" bg="dodgerblue">
-              {children}
-            </GridItem>
+            <GridItem area="main">{children}</GridItem>
           </Grid>
         </Providers>
       </body>

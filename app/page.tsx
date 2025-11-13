@@ -1,5 +1,9 @@
-import { Button } from "@chakra-ui/react";
+import GameGrid from "./GameGrid";
 
 export default function Home() {
-  return <main>Main</main>;
+  return (
+    <main>
+      <GameGrid />
+    </main>
+  );
 }
