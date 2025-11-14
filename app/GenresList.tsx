@@ -1,6 +1,7 @@
 "use client";
 
 import useGenres from "@/hooks/useGenres";
+import getCroppedImageUrl from "@/services/image-url";
 import { Image, Text } from "@chakra-ui/react";
 import { HStack, List, ListItem } from "@chakra-ui/react";
 
@@ -15,7 +16,7 @@ const GenresList = () => {
             <Image
               boxSize="32px"
               borderRadius={8}
-              src={genre.image_background}
+              src={getCroppedImageUrl(genre.image_background)}
               alt={genre.name}
             />
             <Text fontSize="lg">{genre.name}</Text>
