@@ -4,6 +4,7 @@ import { Grid, GridItem } from "@chakra-ui/react";
 import "./globals.css";
 import Providers from "../providers";
 import NavBar from "./NavBar";
+import GenresList from "./GenresList";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,7 +42,7 @@ export default function RootLayout({
               <NavBar />
             </GridItem>
             <GridItem area="aside" display={{ base: "none", lg: "block" }}>
-              Aside
+              <GenresList />
             </GridItem>
 
             <GridItem area="main">{children}</GridItem>
