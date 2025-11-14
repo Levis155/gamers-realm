@@ -1,15 +1,28 @@
 "use client";
 
 import useGenres from "@/hooks/useGenres";
+import { Image, Text } from "@chakra-ui/react";
+import { HStack, List, ListItem } from "@chakra-ui/react";
 
 const GenresList = () => {
   const { data } = useGenres();
+
   return (
-    <ul>
+    <List>
       {data.map((genre) => (
-        <li key={genre.id}>{genre.name}</li>
+        <ListItem key={genre.id} py="5px">
+          <HStack>
+            <Image
+              boxSize="32px"
+              borderRadius={8}
+              src={genre.image_background}
+              alt={genre.name}
+            />
+            <Text fontSize="lg">{genre.name}</Text>
+          </HStack>
+        </ListItem>
       ))}
-    </ul>
+    </List>
   );
 };
 

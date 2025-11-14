@@ -37,11 +37,19 @@ export default function RootLayout({
               base: `"nav" "main"`,
               lg: `"nav nav" "aside main"`,
             }}
+            templateColumns={{
+              base: "1fr",
+              lg: "200px 1fr",
+            }}
           >
             <GridItem area="nav">
               <NavBar />
             </GridItem>
-            <GridItem area="aside" display={{ base: "none", lg: "block" }}>
+            <GridItem
+              area="aside"
+              display={{ base: "none", lg: "block" }}
+              paddingX={5}
+            >
               <GenresList />
             </GridItem>
 
